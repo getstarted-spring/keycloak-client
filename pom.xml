@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.getstarted.spring</groupId>
+  <artifactId>keycloak-client</artifactId>
+  <version>1.0.0.BUILD-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <developers>
+    <developer>
+      <name>Andy Lian</name>
+      <email>andylke@gmail.com</email>
+    </developer>
+  </developers>
+
+  <properties>
+  	<!-- java version -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+  	<!-- file encoding -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <!-- spring-boot -->
+    <spring-boot.version>2.2.8.RELEASE</spring-boot.version>
+
+    <!-- keycloak -->
+    <keycloak.version>11.0.2</keycloak.version>
+
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- spring-boot -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      
+      <!-- keycloak -->
+      <dependency>
+        <groupId>org.keycloak.bom</groupId>
+        <artifactId>keycloak-adapter-bom</artifactId>
+        <version>${keycloak.version}</version>
+        <type>pom</type>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!-- spring -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- spring -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- keycloak -->
+    <dependency>
+      <groupId>org.keycloak</groupId>
+      <artifactId>keycloak-spring-boot-starter</artifactId>
+      <version>${keycloak.version}</version>
+    </dependency>
+
+  </dependencies>
+
+</project>

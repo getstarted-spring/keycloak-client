@@ -1,0 +1,31 @@
+
+server:
+  port: 8081
+
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: spring-boot-realm
+  resource: spring-boot-app
+  credentials:
+    secret: 1251dcd5-d4d7-4fe9-9538-bc994a3990b6
+  bearer-only: true
+  public-client: true
+
+  security-constraints:
+    - auth-roles:
+      - basic-user
+      security-collections:
+      - name: 
+        patterns:
+        - /user/*
+    - auth-roles:
+      - administrator
+      security-collections:
+      - name: 
+        patterns:
+        - /user/*
+        - /admin/*
+
+logging:
+  level:
+    org.keycloak: TRACE
