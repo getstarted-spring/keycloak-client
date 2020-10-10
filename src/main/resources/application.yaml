@@ -4,22 +4,22 @@ server:
 
 keycloak:
   auth-server-url: http://localhost:8080/auth
-  realm: spring-boot-realm
-  resource: spring-boot-app
+  realm: spring-boot
+  resource: spring-boot
   credentials:
-    secret: 1251dcd5-d4d7-4fe9-9538-bc994a3990b6
+    secret: 6fd1b103-7e2b-4c77-850f-a4b41161667f
   bearer-only: true
   public-client: true
 
   security-constraints:
     - auth-roles:
-      - basic-user
+      - spring-user
       security-collections:
       - name: 
         patterns:
         - /user/*
     - auth-roles:
-      - administrator
+      - spring-admin
       security-collections:
       - name: 
         patterns:
