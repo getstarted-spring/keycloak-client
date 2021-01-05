@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
   <groupId>io.getstarted.spring</groupId>
   <artifactId>keycloak-client</artifactId>
   <version>1.0.0.BUILD-SNAPSHOT</version>
   <packaging>jar</packaging>
-
-  <developers>
-    <developer>
-      <name>Andy Lian</name>
-      <email>andylke@gmail.com</email>
-    </developer>
-  </developers>
 
   <properties>
   	<!-- java version -->
@@ -22,9 +22,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <!-- spring-boot -->
-    <spring-boot.version>2.2.8.RELEASE</spring-boot.version>
-
     <!-- keycloak -->
     <keycloak.version>11.0.2</keycloak.version>
 
@@ -32,15 +29,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- spring-boot -->
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot.version}</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-      
       <!-- keycloak -->
       <dependency>
         <groupId>org.keycloak.bom</groupId>
@@ -65,7 +53,7 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-    
+
     <!-- keycloak -->
     <dependency>
       <groupId>org.keycloak</groupId>
